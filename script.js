@@ -1269,3 +1269,358 @@ document.addEventListener('DOMContentLoaded', () => {
         obs.observe(popupText);
     }
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const satuButtons = document.querySelectorAll(".satu-btn");
+  const satuContentCard = document.getElementById("satuContentCard");
+
+  const satuData = {
+    s: {
+      icon: "fa-flask-vial",
+      title: "S - SCIENCE",
+      word: "(Sains & Teknologi)",
+      text: "Menumbuhkan nalar kritis, kemampuan riset, logika sains, dan penguasaan teknologi digital untuk bersaing di tingkat nasional maupun internasional."
+    },
+    a: {
+      icon: "fa-heart",
+      title: "A - ATTITUDE",
+      word: "(Sikap & Karakter)",
+      text: "Membentuk peserta didik yang memiliki karakter baik, disiplin, bertanggung jawab, berakhlak mulia, serta mampu menghargai orang lain."
+    },
+    t: {
+      icon: "fa-star",
+      title: "T - TALENT",
+      word: "(Bakat & Prestasi)",
+      text: "Mengembangkan potensi, minat, dan bakat peserta didik agar mampu menghasilkan prestasi di bidang akademik maupun nonakademik."
+    },
+    u: {
+      icon: "fa-people-group",
+      title: "U - UNITY",
+      word: "(Persatuan & Kebersamaan)",
+      text: "Membangun semangat kebersamaan, kolaborasi, toleransi, dan persatuan seluruh warga sekolah untuk menciptakan lingkungan pendidikan yang harmonis."
+    }
+  };
+
+  satuButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const key = button.dataset.satu;
+      const data = satuData[key];
+
+      if (!data || !satuContentCard) return;
+
+      satuButtons.forEach(item => {
+        item.classList.remove("active");
+      });
+
+      button.classList.add("active");
+
+      satuContentCard.classList.add("changing");
+
+      setTimeout(() => {
+        satuContentCard.innerHTML = `
+          <i class="fa-solid ${data.icon}"></i>
+          <div>
+            <h4>
+              ${data.title}
+              <span>${data.word}</span>
+            </h4>
+            <p>${data.text}</p>
+          </div>
+        `;
+
+        satuContentCard.classList.remove("changing");
+      }, 180);
+    });
+  });
+
+  const profileSearchInput = document.getElementById("profileSearchInput");
+  const profileTable = document.querySelector(".profile-table");
+  const tableNoResult = document.getElementById("tableNoResult");
+
+  if (profileSearchInput && profileTable) {
+    profileSearchInput.addEventListener("input", () => {
+      const keyword = profileSearchInput.value.toLowerCase().trim();
+      const rows = profileTable.querySelectorAll("tbody tr:not(#tableNoResult)");
+      let found = false;
+
+      rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+
+        if (text.includes(keyword)) {
+          row.style.display = "";
+          found = true;
+        } else {
+          row.style.display = "none";
+        }
+      });
+
+      if (tableNoResult) {
+        tableNoResult.style.display = found ? "none" : "";
+      }
+    });
+  }
+
+  const copyButtons = document.querySelectorAll(".profile-copy-btn");
+
+  copyButtons.forEach(button => {
+    button.addEventListener("click", async () => {
+      const value = button.dataset.copy;
+
+      if (!value) return;
+
+      try {
+        await navigator.clipboard.writeText(value);
+
+        const originalHTML = button.innerHTML;
+
+        button.innerHTML = `
+          <i class="fa-solid fa-check"></i>
+          Tersalin
+        `;
+
+        setTimeout(() => {
+          button.innerHTML = originalHTML;
+        }, 1500);
+      } catch (error) {
+        const textArea = document.createElement("textarea");
+        textArea.value = value;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand("copy");
+        textArea.remove();
+
+        const originalHTML = button.innerHTML;
+
+        button.innerHTML = `
+          <i class="fa-solid fa-check"></i>
+          Tersalin
+        `;
+
+        setTimeout(() => {
+          button.innerHTML = originalHTML;
+        }, 1500);
+      }
+    });
+  });
+
+  const orgFilterButtons = document.querySelectorAll(".org-filter-btn");
+  const orgRoleCards = document.querySelectorAll(".org-role-card");
+
+  orgFilterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const filter = button.dataset.filter;
+
+      orgFilterButtons.forEach(item => {
+        item.classList.remove("active");
+      });
+
+      button.classList.add("active");
+
+      orgRoleCards.forEach(card => {
+        const category = card.dataset.category;
+
+        if (filter === "all" || category === filter) {
+          card.classList.remove("hidden");
+        } else {
+          card.classList.add("hidden");
+        }
+      });
+    });
+  });
+
+  const viewport = document.querySelector(".org-img-viewport");
+  const image = document.getElementById("orgChartImg");
+
+  const zoomInBtn = document.getElementById("zoomInBtn");
+  const zoomOutBtn = document.getElementById("zoomOutBtn");
+  const zoomResetBtn = document.getElementById("zoomResetBtn");
+  const zoomFullscreenBtn = document.getElementById("zoomFullscreenBtn");
+
+  if (viewport && image) {
+    let scale = 1;
+    let positionX = 0;
+    let positionY = 0;
+
+    let dragging = false;
+    let startX = 0;
+    let startY = 0;
+
+    const minScale = 0.5;
+    const maxScale = 4;
+    const zoomStep = 0.2;
+
+    function updateChart() {
+      image.style.transform =
+        `translate3d(${positionX}px, ${positionY}px, 0) scale(${scale})`;
+    }
+
+    function resetChart() {
+      scale = 1;
+      positionX = 0;
+      positionY = 0;
+      updateChart();
+    }
+
+    zoomInBtn?.addEventListener("click", () => {
+      scale = Math.min(maxScale, scale + zoomStep);
+      updateChart();
+    });
+
+    zoomOutBtn?.addEventListener("click", () => {
+      scale = Math.max(minScale, scale - zoomStep);
+      updateChart();
+    });
+
+    zoomResetBtn?.addEventListener("click", resetChart);
+
+    viewport.addEventListener(
+      "wheel",
+      event => {
+        event.preventDefault();
+
+        if (event.deltaY < 0) {
+          scale = Math.min(maxScale, scale + zoomStep);
+        } else {
+          scale = Math.max(minScale, scale - zoomStep);
+        }
+
+        updateChart();
+      },
+      { passive: false }
+    );
+
+    viewport.addEventListener("mousedown", event => {
+      if (scale <= 1) return;
+
+      dragging = true;
+
+      startX = event.clientX - positionX;
+      startY = event.clientY - positionY;
+
+      viewport.classList.add("dragging");
+    });
+
+    window.addEventListener("mousemove", event => {
+      if (!dragging) return;
+
+      positionX = event.clientX - startX;
+      positionY = event.clientY - startY;
+
+      updateChart();
+    });
+
+    window.addEventListener("mouseup", () => {
+      dragging = false;
+      viewport.classList.remove("dragging");
+    });
+
+    viewport.addEventListener(
+      "touchstart",
+      event => {
+        if (event.touches.length !== 1 || scale <= 1) return;
+
+        dragging = true;
+
+        startX = event.touches[0].clientX - positionX;
+        startY = event.touches[0].clientY - positionY;
+
+        viewport.classList.add("dragging");
+      },
+      { passive: true }
+    );
+
+    viewport.addEventListener(
+      "touchmove",
+      event => {
+        if (!dragging || event.touches.length !== 1) return;
+
+        positionX = event.touches[0].clientX - startX;
+        positionY = event.touches[0].clientY - startY;
+
+        updateChart();
+      },
+      { passive: true }
+    );
+
+    viewport.addEventListener("touchend", () => {
+      dragging = false;
+      viewport.classList.remove("dragging");
+    });
+
+    zoomFullscreenBtn?.addEventListener("click", async () => {
+      try {
+        if (!document.fullscreenElement) {
+          await viewport.requestFullscreen();
+        } else {
+          await document.exitFullscreen();
+        }
+      } catch (error) {
+        viewport.classList.toggle("fullscreen-fallback");
+      }
+    });
+
+    document.addEventListener("fullscreenchange", () => {
+      if (document.fullscreenElement === viewport) {
+        viewport.classList.add("org-fullscreen");
+      } else {
+        viewport.classList.remove("org-fullscreen");
+      }
+    });
+
+    updateChart();
+  }
+
+  const lightbox = document.getElementById("profileLightbox");
+  const lightboxImg = document.getElementById("profileLightboxImg");
+  const lightboxCaption = document.getElementById("profileLightboxCaption");
+  const lightboxClose = document.getElementById("profileLightboxClose");
+
+  const zoomableImages = document.querySelectorAll(".profile-zoomable");
+
+  zoomableImages.forEach(item => {
+    item.addEventListener("click", () => {
+      const img = item.tagName === "IMG"
+        ? item
+        : item.querySelector("img");
+
+      if (!img || !lightbox || !lightboxImg) return;
+
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt || "Pratinjau Gambar";
+
+      if (lightboxCaption) {
+        lightboxCaption.textContent =
+          item.dataset.caption || img.alt || "";
+      }
+
+      lightbox.classList.add("active");
+      document.body.classList.add("lightbox-open");
+    });
+  });
+
+  function closeLightbox() {
+    if (!lightbox) return;
+
+    lightbox.classList.remove("active");
+    document.body.classList.remove("lightbox-open");
+
+    setTimeout(() => {
+      if (lightboxImg) {
+        lightboxImg.src = "";
+      }
+    }, 200);
+  }
+
+  lightboxClose?.addEventListener("click", closeLightbox);
+
+  lightbox?.addEventListener("click", event => {
+    if (event.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+      closeLightbox();
+    }
+  });
+});
