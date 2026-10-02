@@ -1,0 +1,268 @@
+<html>
+<head>
+    <title>Kesiswaan - SMA Negeri 1 Sanggau</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .ekstra-grid::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <main>
+        <section class="kesiswaan-section" id="kesiswaan">
+            <div class="container">
+                <h2 class="section-title">
+                    Kesiswaan <span>SMA Negeri 1 Sanggau</span>
+                </h2>
+                <p class="section-description">
+                    Informasi seputar kegiatan ekstrakurikuler, data siswa aktif, pembagian kelas, serta direktori alumni.
+                </p>
+                <section id="ekstrakurikuler" class="profile-section" style="padding-top:40px;">
+                    <h3 class="sub-title" style="text-align: center; margin-bottom: 2rem;">Ekstrakurikuler Unggulan</h3>
+                    <div class="ekstra-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                        <article class="ekstra-card" style="background: var(--card-bg); padding: 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h3 style="font-size: 1.2rem; margin-bottom: 15px;">Ekstrakulikuler Paskibra</h3>
+                                <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
+                                    Kegiatan ekstrakurikuler paskibra memberikan pengaruh terhadap pembentukan karakter dan sikap siswa karena paskibra dapat menanamkan sikap tegas, bertanggungjawab, disiplin, percaya diri, dan kerja sama.
+                                </p>
+                            </div>
+                            <button class="btn-learn" style="background-color: var(--primary); color: var(--card-bg); border: none; padding: 10px 20px; font-weight: 600; border-radius: 4px; cursor: pointer; width: fit-content;">Learn More</button>
+                        </article>
+                        <article class="ekstra-card" style="background: var(--card-bg); padding: 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h3 style="font-size: 1.2rem; margin-bottom: 15px;">Ekstrakulikuler Seni Tari</h3>
+                                <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
+                                    Kegiatan ekstrakurikuler Seni Tari adalah kegiatan yang pelaksanaan di setiap sabtu pagi. Kegiatan ekstrakurikuler sangat berguna untuk pengembangan hobi, minat dan bakat siswa pada Seni Tari.
+                                </p>
+                            </div>
+                            <button class="btn-learn" style="background-color: var(--primary); color: var(--card-bg); border: none; padding: 10px 20px; font-weight: 600; border-radius: 4px; cursor: pointer; width: fit-content;">Learn More</button>
+                        </article>
+                        <article class="ekstra-card" style="background: var(--card-bg); padding: 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h3 style="font-size: 1.2rem; margin-bottom: 15px;">Ekstrakulikuler Basket Ball</h3>
+                                <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
+                                    Kegiatan ekstrakurikuler Basket Ball adalah kegiatan yang berada di luar program yang tertulis di kurikulum dan umumnya pihak sekolah menyediakan waktu satu hari untuk pelaksanaan kegiatan ini.
+                                </p>
+                            </div>
+                            <button class="btn-learn" style="background-color: var(--primary); color: var(--card-bg); border: none; padding: 10px 20px; font-weight: 600; border-radius: 4px; cursor: pointer; width: fit-content;">Learn More</button>
+                        </article>
+                        <article class="ekstra-card" style="background: var(--card-bg); padding: 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h3 style="font-size: 1.2rem; margin-bottom: 15px;">Ekstrakulikuler Jurnalistik Smansa News</h3>
+                                <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
+                                    Ekstrakurikuler jurnalistik adalah ekstrakurikuler yang menjadikan jurnalistik sebagai pusat materi pembelajaran.
+                                </p>
+                            </div>
+                            <button class="btn-learn" style="background-color: var(--primary); color: var(--card-bg); border: none; padding: 10px 20px; font-weight: 600; border-radius: 4px; cursor: pointer; width: fit-content;">Learn More</button>
+                        </article>
+                    </div>
+                </section>
+                <section id="siswa" class="profile-section" style="padding-top:40px;">
+				    <h3 class="sub-title" style="text-align: center; margin-bottom: 2rem;">Data Siswa</h3>
+                    <div class="table-controls" class="table-controls">
+                        <div>
+                            Menampilkan <input type="number" value="10" > data
+                        </div>
+                        <div>
+                            Cari: <input type="text" >
+                        </div>
+                    </div>
+                    <div class="custom-table-wrapper">
+                        <table class="custom-table">
+                            <thead>
+                                <tr >
+                                    <th >No ▲</th>
+                                    <th >Nama</th>
+                                    <th style="text-align: right;">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr >
+                                    <td >1</td>
+                                    <td>Alexandria Chalika Dini Putri</td>
+                                    <td style="text-align: right;"><button class="btn-detail">Detail</button></td>
+                                </tr>
+                                <tr >
+                                    <td >2</td>
+                                    <td>Alma Dicky Wahyudi</td>
+                                    <td style="text-align: right;"><button class="btn-detail">Detail</button></td>
+                                </tr>
+                                <tr >
+                                    <td >3</td>
+                                    <td>Ayudia Nofita Sari</td>
+                                    <td style="text-align: right;"><button class="btn-detail">Detail</button></td>
+                                </tr>
+                                <tr >
+                                    <td >4</td>
+                                    <td>Aurelia Kayana Noor Dithasna</td>
+                                    <td style="text-align: right;"><button class="btn-detail">Detail</button></td>
+                                </tr>
+                                <tr >
+                                    <td >5</td>
+                                    <td>Alexandria Chalika Dini Putri</td>
+                                    <td style="text-align: right;"><button class="btn-detail">Detail</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table-footer" class="table-footer">
+                        <span>Menampilkan 1 ke 10 dari 18 data</span>
+                        <div class="pagination" class="pagination">
+                            <button >Sebelumnya</button>
+                            <button class="active">1</button>
+                            <button >2</button>
+                            <button >Selanjutnya</button>
+                        </div>
+                    </div>
+                </section>
+                <section id="kelas" class="profile-section" style="padding-top:40px;">
+                    <h3 class="sub-title" style="text-align: center; margin-bottom: 2rem;">Daftar Kelas</h3>
+                    <div class="table-controls" class="table-controls">
+                        <div>
+                            Menampilkan <input type="number" value="10" > data
+                        </div>
+                        <div>
+                            Cari: <input type="text" >
+                        </div>
+                    </div>
+                    <div class="custom-table-wrapper">
+                        <table class="custom-table">
+                            <thead>
+                                <tr >
+                                    <th >No ▲</th>
+                                    <th >Kelas</th>
+                                    <th >Jurusan</th>
+                                    <th >Wali Kelas</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr >
+                                    <td >1</td>
+                                    <td>X A</td>
+                                    <td>Umum</td>
+                                    <td>Putri Maya Juvitasari, S.Pd</td>
+                                </tr>
+                                <tr >
+                                    <td >2</td>
+                                    <td>X B</td>
+                                    <td>Umum</td>
+                                    <td>Hetty Saputri, S.E</td>
+                                </tr>
+                                <tr >
+                                    <td >3</td>
+                                    <td>XI.A-1</td>
+                                    <td>IPA</td>
+                                    <td>Deka Yanti Lasari, S.Pd</td>
+                                </tr>
+                                <tr >
+                                    <td >4</td>
+                                    <td>XI.B-1</td>
+                                    <td>IPS</td>
+                                    <td>Rahmad Thaufik, S.Pd</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table-footer" class="table-footer">
+                        <span>Menampilkan 1 ke 10 dari 17 data</span>
+                        <div class="pagination" class="pagination">
+                            <button >Sebelumnya</button>
+                            <button class="active">1</button>
+                            <button >2</button>
+                            <button >Selanjutnya</button>
+                        </div>
+                    </div>
+                </section>
+                <section id="alumni" class="profile-section" style="padding-top:40px;">
+				<h3 class="sub-title" style="text-align: center; margin-bottom: 2rem;">Daftar Alumni</h3>
+                    <div class="table-controls">
+                        <div>
+                            Menampilkan <input type="number" value="10"> data
+                        </div>
+                        <div>
+                            Cari: <input type="text">
+                        </div>
+                    </div>
+                    <div class="custom-table-wrapper">
+                        <table class="custom-table">
+                            <thead>
+                                <tr>
+                                    <th>No ▲</th>
+                                    <th>Nama</th>
+                                    <th>Thn Lulus</th>
+                                    <th style="text-align: right;">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Yudi Zulkarnain</td>
+                                    <td>1996</td>
+                                    <td style="text-align: right;"><button class="btn-detail">Detail</button></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Jimmy koh boon leang</td>
+                                    <td>2024</td>
+                                    <td style="text-align: right;"><button class="btn-detail">Detail</button></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>YUSSRI RUQOIYATI</td>
+                                    <td>2018</td>
+                                    <td style="text-align: right;"><button class="btn-detail">Detail</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table-footer">
+                        <span>Menampilkan 1 ke 3 dari 3 data</span>
+                        <div class="pagination">
+                            <button>Sebelumnya</button>
+                            <button class="active">1</button>
+                            <button>Selanjutnya</button>
+                        </div>
+                    </div>
+                    <div class="form-alumni-container">
+                        <h3>Formulir Pendaftaran Alumni</h3>
+                        <form action="#">
+                            <div class="form-alumni-group">
+                                <label for="nama-alumni">Nama Lengkap</label>
+                                <input type="text" id="nama-alumni" name="nama" placeholder="Masukkan nama lengkap">
+                            </div>
+                            <div class="form-alumni-group">
+                                <label for="thn-lulus">Tahun Lulus</label>
+                                <input type="number" id="thn-lulus" name="thnlulus" placeholder="Misal: 2020">
+                            </div>
+                            <div class="form-alumni-group">
+                                <label for="pesan-alumni">Pesan / Kesan Alumni</label>
+                                <textarea id="pesan-alumni" name="pesan" rows="4" placeholder="Tuliskan pesan dan kesan selama di sekolah"></textarea>
+                            </div>
+                            <button type="submit" class="btn-submit-alumni">Kirim Data</button>
+                        </form>
+                    </div>
+                    <div class="testimonials-alumni">
+                        <h3>Kata-Kata Alumni</h3>
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"SMA 1 Sanggau memberikan banyak pengalaman berharga. Para guru sangat suportif dan fasilitas terus berkembang. Bangga menjadi bagian dari keluarga besar Smansa Sanggau."</p>
+                            <p class="testimonial-author">- Yudi Zulkarnain, Alumni 1996</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"Sekolah ini bukan hanya tempat belajar, tapi tempat membentuk karakter dan masa depan. Banyak kenangan indah yang tak terlupakan bersama teman-teman."</p>
+                            <p class="testimonial-author">- Jimmy Koh Boon Leang, Alumni 2024</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script src="components.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,295 @@
+<html>
+<head>
+   <title>SMA 1 Sanggau</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="header-placeholder"></div>
+  <section class="hero" id="home">
+    <img
+      src="https://cdn-sekolah.annibuku.com/30101943/6.jpg"
+      alt="SMA Negeri 1 Sanggau"
+      class="hero-img"
+    >
+    <div class="hero-overlay"></div>
+    <main class="content">
+      <p class="hero-label">SMA NEGERI 1 SANGGAU</p>
+      <h1>
+        Selamat Datang di
+        <span>SMA 1 Sanggau</span>
+      </h1>
+      <p class="hero-description">
+        Mengantarkan peserta didik menjadi siswa yang berprestasi dalam bidang
+        Science, Attitude, Talent dan Unity (SATU) di tingkat nasional dan internasional
+      </p>
+      <a href="profile.html" class="cta">
+        <span>Jelajahi Profil Sekolah</span>
+        <span class="cta-arrow">→</span>
+      </a>
+    </main>
+    <div class="scroll-indicator">
+      <span></span>
+      <p>Scroll untuk menjelajahi</p>
+    </div>
+  </section>
+  <section class="academic-section" id="kalender">
+    <div class="academic-header">
+      <span class="academic-label">AKADEMIK</span>
+      <h2>Kalender Akademik SMAN 1 Sanggau</h2>
+      <p>
+        Temukan jadwal dan kegiatan akademik sekolah
+      </p>
+    </div>
+    <div class="event-bar">
+      <div class="event-title">
+        <span class="event-dot"></span>
+        <span>Event yang akan datang</span>
+      </div>
+      <div class="event-status" id="eventStatus">
+        Belum ada event/acara
+      </div>
+    </div>
+    <div class="calendar-card">
+      <div class="calendar-toolbar">
+        <button
+          type="button"
+          class="today-button"
+          id="todayButton"
+        >
+          Hari Ini
+        </button>
+        <div class="month-navigation">
+          <button
+            type="button"
+            class="month-button"
+            id="prevMonth"
+            aria-label="Bulan sebelumnya"
+          >
+            ‹
+          </button>
+          <div class="month-title">
+            <h3 id="namaBulan">September</h3>
+            <span id="tahun">2026</span>
+          </div>
+          <button
+            type="button"
+            class="month-button"
+            id="nextMonth"
+            aria-label="Bulan berikutnya"
+          >
+            ›
+          </button>
+        </div>
+        <button
+          type="button"
+          class="event-filter-button"
+          id="filterButton"
+        >
+          Semua
+        </button>
+      </div>
+      <div class="filter-menu" id="filterMenu">
+        <button
+          type="button"
+          class="filter-option active"
+          data-filter="all"
+        >
+          Semua
+        </button>
+        <button
+          type="button"
+          class="filter-option"
+          data-filter="akademik"
+        >
+          Akademik
+        </button>
+        <button
+          type="button"
+          class="filter-option"
+          data-filter="ujian"
+        >
+          Ujian
+        </button>
+        <button
+          type="button"
+          class="filter-option"
+          data-filter="kegiatan"
+        >
+          Kegiatan
+        </button>
+      </div>
+      <div class="calendar-week">
+        <div>Sen</div>
+        <div>Sel</div>
+        <div>Rab</div>
+        <div>Kam</div>
+        <div>Jum</div>
+        <div>Sab</div>
+        <div>Min</div>
+      </div>
+      <div id="isiKalender" class="calendar-grid"></div>
+      <div id="dateDetail" class="date-detail">
+        <div class="detail-icon">
+          <i class="fa-regular fa-calendar"></i>
+        </div>
+        <div class="detail-content">
+          <span class="detail-label">
+            TANGGAL DIPILIH
+          </span>
+          <h4 id="detailJudul">
+            Pilih tanggal
+          </h4>
+          <p id="detailIsi">
+            Klik tanggal pada kalender untuk melihat informasi kegiatan.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="event-list-wrapper">
+      <div class="event-list-header">
+        <div>
+          <span class="academic-label">
+            AGENDA
+          </span>
+          <h3>
+            Kegiatan Mendatang
+          </h3>
+        </div>
+        <span
+          id="eventCount"
+          class="event-count"
+        >
+          0 kegiatan
+        </span>
+      </div>
+      <div
+        id="eventList"
+        class="event-list"
+      ></div>
+    </div>
+  </section>
+  <section class="sambutan-section" id="sambutan">
+    <div class="container">
+      <h2 class="section-title">
+        Kata Sambutan Kepala Sekolah
+        <span>SMA Negeri 1 Sanggau</span>
+      </h2>
+      <div class="sambutan-content">
+        <div class="sambutan-image">
+          <img
+            src="https://www.smanegeri1sanggau.sch.id/upload/imagecache/22371862PakLas-500x685.jpeg"
+            alt="Kepala Sekolah SMA Negeri 1 Sanggau"
+          >
+        </div>
+        <div class="sambutan-text">
+          <p>
+            Assalamualaikum Warahmatullahi Wabarakatuh.
+          </p>
+          <p>
+            Puji syukur kami panjatkan ke hadirat Allah Subhanahu Wataala
+            atas karunia dan berkah yang tiada putus telah dilimpahkan-Nya.
+          </p>
+          <p>
+            Saya sebagai pimpinan sekolah menyambut baik dan gembira
+            atas hadirnya website SMA Negeri 1 Sanggau sebagai sarana
+            informasi dan pelayanan kepada masyarakat.
+          </p>
+          <p>
+            Semoga website ini dapat memberikan informasi yang mudah,
+            cepat, valid, dan akuntabel bagi seluruh masyarakat.
+          </p>
+          <a href="sdm.html" class="btn-sdm">
+            Lihat SDM Sekolah
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="berita">
+    <iframe
+      src="berita.html"
+      style="width: 100%; height: 650px; border: none;"
+      title="Berita SMA Negeri 1 Sanggau"
+    ></iframe>
+  </section>
+  <section class="statistik" id="statistik">
+    <h2>Statistik</h2>
+    <div class="statistik-container">
+      <div class="statistik-item">
+        <div class="statistik-icon">
+          <i class="fa-solid fa-user-graduate"></i>
+        </div>
+        <h3
+          class="counter"
+          data-target="600"
+        >
+          0+
+        </h3>
+        <p>Siswa</p>
+      </div>
+      <div class="statistik-item">
+        <div class="statistik-icon">
+          <i class="fa-solid fa-chalkboard-user"></i>
+        </div>
+        <h3
+          class="counter"
+          data-target="30"
+        >
+          0+
+        </h3>
+        <p>Guru</p>
+      </div>
+      <div class="statistik-item">
+        <div class="statistik-icon">
+          <i class="fa-solid fa-school"></i>
+        </div>
+        <h3
+          class="counter"
+          data-target="18"
+        >
+          0
+        </h3>
+        <p>Kelas</p>
+      </div>
+      <div class="statistik-item">
+        <div class="statistik-icon">
+          <i class="fa-solid fa-trophy"></i>
+        </div>
+        <h3>Top 6</h3>
+        <p>
+          SMA Kalimantan Barat<br>
+          LTMPT 2026
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2 class="popup-text" style="color: white; opacity: 0; transform: scale(0.8); transition: all 0.8s ease-out;">Mari Bergabung Menjadi Bagian Keluarga<br>Besar SMA Negeri 1 Sanggau</h2>
+      <a
+        href="https://spmb-dikbud.kalbarprov.go.id/home"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="cta-button"
+      >
+        Join →
+      </a>
+    </div>
+  </section>
+  <section id="kontak">
+    <iframe
+      src="kontak.html"
+      style="width: 100%; border: none; min-height: 900px;"
+      title="Kontak SMA Negeri 1 Sanggau"
+    ></iframe>
+  </section>
+  <div id="footer-placeholder"></div>
+  <script src="components.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

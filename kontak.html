@@ -1,0 +1,104 @@
+<html>
+<head>
+  <title>Kontak - SMA Negeri 1 Sanggau</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+<div id="header-placeholder"></div>
+<section id="kontak" class="kontak">
+  <h2><span>Kontak</span> Sekolah</h2>
+  <p class="kontak-subtitle">
+    Temukan lokasi sekolah atau sampaikan kritik dan saran kepada kami.
+  </p>
+  <div class="kontak-container">
+    <div class="kontak-box">
+      <h3>Letak Sekolah</h3>
+      <p>
+        Silakan lihat lokasi SMA Negeri 1 Sanggau melalui peta berikut.
+      </p>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.818224535568!2d110.585!3d0.125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM8KwMDcnMzAuMCJOIDExMMKwMzUnMDYuMCJF!5e0!3m2!1sid!2sid!4v1600000000000!5m2!1sid!2sid"
+        allowfullscreen
+        loading="lazy"
+        class="map">
+      </iframe>
+      <div class="info-sekolah">
+        <p>
+          <i class="fas fa-map-marker-alt"></i>
+          <span>
+            Jl. Jenderal Sudirman,<br>
+            Sanggau, Kalimantan Barat
+          </span>
+        </p>
+        <p>
+          <i class="fas fa-envelope"></i>
+          <span>
+            smaneg1sanggau@gmail.com
+          </span>
+        </p>
+        <p>
+          <i class="fas fa-phone"></i>
+          <span>
+            056421540
+          </span>
+        </p>
+      </div>
+    </div>
+    <div class="kontak-box" id="kritik-saran">
+      <h3>Kritik dan Saran</h3>
+      <p>
+        Sampaikan kritik, saran, atau pertanyaan untuk membantu meningkatkan
+        pelayanan sekolah.
+      </p>
+      <form action="#" method="POST" onsubmit="return validasi()">
+        <div class="input-group">
+          <i data-feather="user"></i>
+          <input
+            type="text"
+            id="nama"
+            placeholder="Nama Lengkap"
+          >
+        </div>
+        <div class="input-group">
+          <i data-feather="mail"></i>
+          <input
+            type="email"
+            id="email"
+            placeholder="Email Anda"
+          >
+        </div>
+        <div class="input-group">
+          <i data-feather="book"></i>
+          <select id="kategori" class="select-input">
+            <option value="">-- Pilih Topik Pertanyaan --</option>
+            <option value="PPDB">Informasi PPDB / Pendaftaran</option>
+            <option value="Akademik">Layanan Akademik</option>
+            <option value="Saran">Kritik dan Saran</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <i data-feather="message-square"></i>
+          <textarea
+            id="alamat"
+            rows="5"
+            placeholder="Kritik, saran, atau pertanyaan Anda"></textarea>
+        </div>
+        <button type="submit" class="btn">
+          Kirim Pesan
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+<div id="footer-placeholder"></div>
+<script src="https://unpkg.com/feather-icons"></script>
+<script>
+  feather.replace();
+</script>
+<script src="components.js"></script>
+</body>
+</html>
